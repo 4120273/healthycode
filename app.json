@@ -1,8 +1,10 @@
 {
   "pages": [
+    "pages/rescue/rescue",
     "pages/index/index"
   ],
   "window": {
-    "defaultTitle": "My App"
+    "defaultTitle": "随申码",
+    "titleBarColor": "#deab8a"
   }
 }

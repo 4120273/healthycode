@@ -1,0 +1,10 @@
+.navigateToRescue {
+  width: 200rpx;
+  height: 100rpx;
+  border-radius: 10rpx;
+  background-color: #d71345;
+  color: aliceblue;
+  font-weight: 600;
+  line-height: 50rpx;
+  font-size: 30rpx;
+}

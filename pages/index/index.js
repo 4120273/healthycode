@@ -32,4 +32,18 @@ Page({
       path: 'pages/index/index',
     };
   },
+  navigateToRescue() {
+    my.navigateTo({
+      url: '/pages/rescue/rescue',
+      success: () => {
+        
+      },
+      fail: () => {
+        
+      },
+      complete: () => {
+        
+      }
+    });
+  }
 });
