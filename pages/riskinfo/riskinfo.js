@@ -2,8 +2,8 @@ const markers = [{
   id: 0,
   latitude: 34.276352,
   longitude: 108.946973,
-  width: 25,
-  height: 31,
+  width: 40,
+  height: 50,
   iconPath: '/image/mark_bs.png',
   callout: {
     content: 'callout',
@@ -14,10 +14,25 @@ const animMarker = [{
   id: 1,
   latitude: 34.276352,
   longitude: 108.946973,
-  width: 25,
-  height: 31,
+  width: 40,
+  height: 50,
 
-  iconPath: '/image/mark_bs.png',
+  iconPath: '/image/car.png',
+
+  fixedPoint:{
+    originX: 200,
+    originY: 150,
+  },
+  markerLevel: 2
+}];
+const animMarker2 = [{
+  id: 1,
+  latitude: 31.204641,
+  longitude: 121.31281,
+  width: 40,
+  height: 50,
+
+  iconPath: '/image/car.png',
 
   fixedPoint:{
     originX: 200,
@@ -30,8 +45,8 @@ const labelMarker = [{
   id: 2,
   latitude: 34.276352,
   longitude: 108.946973,
-  width: 25,
-  height: 31,
+  width: 40,
+  height: 50,
   iconPath: '/image/mark_bs.png',
   label:{
     content:"Hello Label",
@@ -47,8 +62,8 @@ const customCalloutMarker = [{
   id: 3,
   latitude: 34.276352,
   longitude: 108.946973,
-  width: 25,
-  height: 31,
+  width: 40,
+  height: 50,
   iconPath: '/image/mark_bs.png',
   "customCallout":{
     "type": 2,
@@ -71,8 +86,8 @@ const iconAppendStrMarker = [{
   id: 34,
   latitude: 34.276352,
   longitude: 108.946973,
-  width: 19,
-  height: 31,
+  width: 40,
+  height: 50,
   iconAppendStr:"iconAppendStr",
   markerLevel: 2
 }];
@@ -102,8 +117,8 @@ const longitude = 125.282956;
 const latitude = 43.939549;
 const includePoints = [{
   // 地图载入的定位
-  latitude: 43.939549,
-  longitude: 125.282956,
+  latitude: 31.206646,
+  longitude: 121.314044,
 }];
 
 Page({
@@ -121,6 +136,26 @@ Page({
   onReady() {
     // 使用 my.createMapContext 获取 map 上下文
     this.mapCtx = my.createMapContext('map');
+    this.initData();
+    this.demoMarkerAnimation();
+  },
+  initData() {    
+    this.demoMoveToLocation();
+    this.demoCircle()
+    // 创建前景音上下文对象
+    this.innerAudioContext  = my.createInnerAudioContext();
+    this.innerAudioContext .src =  'XNTE2OTk2MTczMg==';
+    // 是否自动开始播放，默认 false
+    this.innerAudioContext .autoplay = true; 
+    // 是否循环播放，默认 false
+    this.innerAudioContext .loop = true; 
+    this.innerAudioContext .play();
+  },
+  pause() {
+    this.innerAudioContext .pause();
+  },
+  makePhoneCall() {
+    my.makePhoneCall({ number:  hospital[0].phone });
   },
   demoResetMap() {
     this.setData({
@@ -148,19 +183,25 @@ Page({
     });
   },
   makePhone() {
+    let that = this;
     my.alert({
       content: '确认拨打 ' + hospital[0].phone + ' ？',
+      success: ()=>{
+        that.makePhoneCall();
+      }
     });
+    
   },
   demoMoveToLocation() {
     this.mapCtx.moveToLocation();
     this.demoMarkerAnimation();
+
   },
   demoMarkerAnimation() {
     if (!my.canIUse('createMapContext.return.updateComponents')) {
       my.alert({ 
-        title: '客户端版本过低',
-        content: 'this.mapCtx.updateComponents 需要 10.1.35 及以上版本'
+        title: '客户端版本过低',
+        content: 'this.mapCtx.updateComponents 需要10.1.35 及以上版本'
       });
       return;
     } 
@@ -291,16 +332,16 @@ Page({
   },
   demoCircle() {
     this.setData({
-      scale: 16,
+      scale: 17,
       longitude,
       latitude,
       circles: [{
-        longitude,
-        latitude,
-        color: '#BB76FF88',
-        fillColor: '#BB76FF33',
+        longitude: 121.313197,
+        latitude: 31.206182,
+        color: '#87CEFA88',
+        fillColor: '#87CEFA33',
         radius: 100,
-        strokeWidth:3,
+        strokeWidth:1,
     }]
     });
   },

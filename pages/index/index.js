@@ -34,7 +34,7 @@ Page({
   },
   navigateToRescue() {
     my.navigateTo({
-      url: '/pages/rescue/rescue',
+      url: '/pages/riskinfo/riskinfo',
       success: () => {
         
       },

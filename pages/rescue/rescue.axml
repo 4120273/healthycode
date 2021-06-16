@@ -16,7 +16,7 @@
         onRegionChange="regionchange"
         onTap="tap"
         onCalloutTap="callouttap"
-        show-location style="width: 100%; height: 1140rpx;"
+        show-location style="width: 100%; height: 100%; border-radius:20rpx;"
         include-points="{{includePoints}}"
         ground-overlays="{{ground-overlays}}">
       </map>

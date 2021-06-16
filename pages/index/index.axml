@@ -3,5 +3,6 @@
   this is a ygq page
 </view>
 <view class="navigateToRescue" onTap="navigateToRescue">
-  健康码异常，点击等待救援
+  健康码异常，附近有危险区！
 </view>
+

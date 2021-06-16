@@ -1,0 +1,87 @@
+<view class="page">
+  <!-- 地图区域 -->
+  <view class="page-section">
+    <view class="page-section-demo">
+      <map
+        id="map"
+        longitude="{{longitude}}"
+        latitude="{{latitude}}"
+        scale="{{scale}}"
+        controls="{{controls}}"
+        onControlTap="controltap"
+        markers="{{markers}}"
+        onMarkerTap="markertap"
+        polyline="{{polyline}}"
+        polygon="{{polygon}}"
+        circles="{{circles}}"
+        onRegionChange="regionchange"
+        onTap="tap"
+        onCalloutTap="callouttap"
+        show-location style="width: 100%; height: 100%; border-radius:20rpx;"
+        include-points="{{includePoints}}"
+        ground-overlays="{{ground-overlays}}">
+      </map>
+    </view>
+  </view>
+  <!-- 上部区域 -->
+  <view class="page-section-top">
+    <view class="page-section-top-top">
+      <view class="page-section-top-top-text">
+        <view style="color:red">您附近有疫情风险提示，请有序回避，切勿忙乱，避免发生踩踏</view>
+        您当前的状态码仍为：<view style="color: green; font-size: 14; font-weight: 600">绿码(安全)</view>
+      </view>
+      <button size="default" type="primary" class="middle-btn" onTap="pause">关闭警报铃声</button>
+    </view>
+    <view class="page-section-top-bottom">
+      <view class="page-section-top-bottom-text">
+        疫情风险地区：阿里中心·上海虹桥TOWER4
+        <view>距离您 201米 | 上海市 闵行区 申长路1398弄1-4号</view>
+      </view>
+      
+    </view>
+  </view>
+  <!-- 下部区域 -->
+  <view class="page-section-btns">
+    <view class="page-section-btns-text-bottom">
+      <view  class="page-section-btns-text-bottom-box">
+        <image mode="scaleToFill" src="/resources/icons/message.png" class="page-section-btns-text-bottom-icon"/>
+        <view onTap="demoMoveToLocation">查看救护车位置</view>      
+      </view>
+      <view  class="page-section-btns-text-bottom-box">
+        <image mode="scaleToFill" src="/resources/icons/L.png" class="page-section-btns-text-bottom-icon"/>
+            
+      </view>
+      <view class="page-section-btns-text-bottom-box">
+        <image mode="scaleToFill" src="/resources/icons/phone.png" class="page-section-btns-text-bottom-icon"/>
+        <view onTap="makePhone">拨打救护车电话</view>
+      </view>
+      <!-- <view>
+        <image mode="scaleToFill" src=""/>
+        <view onTap="demoMoveToLocation">回到定位点</view>
+      </view> -->
+    </view>
+      
+    </view>
+    <!-- <view class="page-section-btns">
+      <view onTap="demoMarkerAnimation">Marker 动画</view>
+      <view onTap="demoMarkerLabel">Label</view>
+      <view onTap="demoMarkerCustomCallout">CustomCallout</view>
+    </view>
+    <view class="page-section-btns">
+      <view onTap="demoMarkerAppendStr">文字Marker</view>
+      <view onTap="demoTrafficOverlay">路况展示</view>
+      <view onTap="demoShowRoute">步行路线规划</view>
+    </view>
+    <view class="page-section-btns">
+      <view onTap="demoCompass">指南针</view>
+      <view onTap="demoScale">比例尺</view>
+      <view onTap="demoGesture">手势</view>
+    </view>
+    <view class="page-section-btns">
+      <view onTap="demoPolyline">线</view>
+      <view onTap="demoPolygon">多边形</view>
+      <view onTap="demoCircle">圆</view>
+    </view>
+    <view class="page-section-btns">
+    </view>  -->
+</view>

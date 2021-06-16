@@ -1,7 +1,8 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/rescue/rescue",
-    "pages/index/index"
+    "pages/riskinfo/riskinfo"
   ],
   "window": {
     "defaultTitle": "随申码",
